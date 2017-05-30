@@ -29,7 +29,7 @@ router.post('/', function (req, res) {
       entry.messaging.forEach(function(event) {
         if (event.message) {
           receivedMessage(event);
-          chatService.sendTextMessage(pageID, event.message);
+          chatService.sendTextMessage(event.sender.id, event.message.text);
         } else {
           console.log("Webhook received unknown event: ", event);
         }
