@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* POST function*/
-router.post('/webhook', function (req, res) {
+router.post('/', function (req, res) {
   var data = req.body;
 
   // Make sure this is a page subscription
