@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET hello world page. */
 router.get('/', function(req, res, next) {
 	if (chatService.authenticate(req)) {
-		res.send(1613044729);
+		res.send(req.query['hub.challenge']);
 	}
 	else {
 		res.status(401).send();
